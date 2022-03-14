@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title>My Portfolio</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css' rel='stylesheet'>	
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" > </script>	
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" ></script>
+        <link rel="stylesheet" href="main.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="container" id="main">
+            <div class="row" id="header">
+                <div class="col-sm-12" id="menu">
+                    <p id="logo">NameFinder.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12" style="text-align: center;">
+                    
+                </div>
+                <div class="col-sm-6" style="margin:10px;padding-left: 2%;">
+                    <h2 style="color: rgb(57, 59, 145); font-size: 30px;font-family: 'Quicksand', sans-serif;"><b style="font-weight: 900;">So you want to know your Akan name !</b></h2><br>
+                    <p style="font-family: 'Quicksand', sans-serif; font-size: 22px; padding: 10px; color: rgb(155, 160, 160);">
+                        <b>Enter your birthday in the calendar and we will calculate the day of the week you were born in and the subsequent Akan name</b>
+                    </p>
+                    <p style="font-family: 'Quicksand', sans-serif; font-size: 22px; padding: 10px; color: rgb(155, 160, 160);"><b>Its that easy..</b></p>
+                </div>
+                <div class="col-sm-4" id="home" style="background-color: #f3f0f0; text-align: center;">
+                    
+                    
+                    <input type="text" id="calendar"  placeholder="Enter your birthday"><br>
+                    <input type="text" id="demo" placeholder="watch out for the week day" readonly><br>
+                    <p style="font-family: 'Libre Baskerville', serif; font-size: 15px;">Select your gender</p>
+                    <select name="gender" id="gender">
+                        <option value="male">male</option>
+                        <option value="female">female</option>
+                    </select><br>
+                    <button class="button button4" type="button" onclick="getInputValue();">Find your name</button><br>
+                   
+                    <p style="font-family: 'Libre Baskerville', serif; font-size: 20px; padding: 10px;" id="thename"></p>
+    
+                    <script>
+                        $(document).ready(function() {
+                        
+                            $(function() {
+                                $( "#calendar" ).datepicker();
+                            });
+                        })
+                        $('#calendar').change(function () { 
+                            var eventDate = $('#calendar').val();
+                            var dateElement = eventDate.split("/");
+                            var dateFormat = dateElement[2]+'-'+dateElement[0]+'-'+dateElement[1];
+                            var date = new Date(dateFormat+'T10:00:00Z'); 
+                            var weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                            var day = weekday[date.getDay()];
+                            $('#calendar').val($('#calendar').val());
+    
+                            document.getElementById("demo").value = day;
+                            
+                        });
+                        
+                    </script>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>            
+        </div>
+    </body>
+</html>

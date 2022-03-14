@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+#main {
+    margin: 0;
+    padding: 0; 
+    width: 100%;
+}
+#header {
+    padding: 0; 
+    margin: 0;
+    height: 60px;
+}
+#menu {
+    height: 100%; background-color: #404040;margin: 0;line-height: 60px;
+}
+#logo {
+    color: white; font-size: 30px;font-family: 'Inter', sans-serif;
+}
+#home {
+    padding: 5%;
+}
+#footer {
+    color: #fff;
+    padding: 3%;
+    margin: 0;
+    background-color: #404040;
+}
+.button {
+    background-color: #04AA6D; 
+    border: none;
+    color: white;
+    
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    
+}
+.button4 {
+    border-radius: 15px;
+    
+    font-family: 'Quicksand', sans-serif;
+    
+    padding:15px;
+}
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
